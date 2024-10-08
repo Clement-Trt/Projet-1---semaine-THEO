@@ -19,6 +19,8 @@ public:
 	void TakeDamage(float _degats) override;
 
 	void Move(Vector2 _dir, float _vitesse) override;
+
+	void AttackAlive(Alive* _alive);
 };
 
 #endif // !PLAYER_H

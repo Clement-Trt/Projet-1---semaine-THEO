@@ -12,6 +12,7 @@ protected:
 
 
 public:
+	Alive();
 	Alive(float _vieMax, float _vie);
 
 	virtual float GetMaxLife();

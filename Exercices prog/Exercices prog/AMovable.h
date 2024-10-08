@@ -13,6 +13,7 @@ protected:
 	float vitesse;
 
 public:
+	AMovable();
 	AMovable(Vector2 _dir, float _vitesse);
 
 	virtual void SetDir(Vector2 _dir);

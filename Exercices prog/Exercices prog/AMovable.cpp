@@ -1,5 +1,9 @@
 #include "AMovable.h"
 
+AMovable::AMovable() 
+{
+
+}
 AMovable::AMovable(Vector2 _dir, float _vitesse) : dir(_dir), vitesse(_vitesse)
 {
 

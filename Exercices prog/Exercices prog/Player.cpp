@@ -26,3 +26,10 @@ void Player::Move(Vector2 _dir, float _vitesse)
 {
 	std::cout << "Player just moved at : x = " << _dir.GetX() << " ; y = " << _dir.GetY() << std::endl;
 }
+
+void Player::AttackAlive(Alive* _alive)
+{
+	_alive->TakeDamage(10);
+
+	std::cout << "Player just attacked" << std::endl;
+}

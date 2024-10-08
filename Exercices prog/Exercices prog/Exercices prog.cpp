@@ -2,6 +2,9 @@
 //
 
 #include <iostream>
+#include "Player.h"
+#include "Mob.h"
+
 
 int main()
 {
