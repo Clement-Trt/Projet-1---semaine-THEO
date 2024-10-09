@@ -1,6 +1,6 @@
 #include "AMovable.h"
 
-AMovable::AMovable() 
+AMovable::AMovable() : dir(0,0), vitesse(0)
 {
 
 }

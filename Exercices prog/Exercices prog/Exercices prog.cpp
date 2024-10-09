@@ -2,13 +2,31 @@
 //
 
 #include <iostream>
+#include "StaticObject.h"
+#include "BreakableObject.h"
 #include "Player.h"
 #include "Mob.h"
 
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	StaticObject wall(20, 10);
+	BreakableObject table(20, 20, 20);
+	Mob* mob = new Mob(5, 15, Vector2(2, 0), 30);
+	Player* p = new Player(35, 15, Vector2(-2, 0), 50);
+
+	p->AttackAlive(mob);
+
+	mob->TakeDamage(10);
+
+	p->TakeDamage(20);
+
+	table.TakeDamage(15);
+
+	p->Move();
+
+
+	return 0;
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage

@@ -13,6 +13,7 @@ protected:
 public:
 	BreakableObject();
 	BreakableObject(float _x, float _y, float _vieMax, float _vie);
+	BreakableObject(float _x, float _y, float _vieMax);
 
 	void TakeDamage(float _degats) override;
 

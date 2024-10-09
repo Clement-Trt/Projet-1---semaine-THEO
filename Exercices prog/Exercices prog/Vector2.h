@@ -10,6 +10,7 @@ protected:
 
 public:
 
+	Vector2(); 
 	Vector2(float _x, float _y);
 	~Vector2();
 
@@ -18,6 +19,8 @@ public:
 	void SetX(float _x);
 	void SetY(float _y);
 	void SetXY(float _x, float _y);
+
+	Vector2 operator+(const Vector2& _v);
 
 };
 

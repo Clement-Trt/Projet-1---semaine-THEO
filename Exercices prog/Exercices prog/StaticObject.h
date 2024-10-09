@@ -10,6 +10,7 @@ class StaticObject : public Entity
 protected:
 
 public:
+	StaticObject(); 
 	StaticObject(float _x, float _y);
 
 };
