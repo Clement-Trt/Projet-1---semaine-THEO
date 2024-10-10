@@ -42,9 +42,9 @@ void Player::Move(Vector2 _dir, float _vitesse)
 
 void Player::Move(Vector2 _dir)
 {
-	Entity::SetX(Entity::GetX() + _dir.GetX() * vitesse);
+	Entity::SetX(Entity::GetX() + (_dir.GetX() * vitesse));
 
-	Entity::SetY(Entity::GetY() + _dir.GetY() * vitesse);
+	Entity::SetY(Entity::GetY() + (_dir.GetY() * vitesse));
 
 	std::cout << "Player just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetX() << std::endl;
 }

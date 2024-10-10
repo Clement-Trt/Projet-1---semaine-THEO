@@ -6,10 +6,12 @@
 #include "BreakableObject.h"
 #include "Player.h"
 #include "Mob.h"
+#include "World.h"
 
 
 int main()
 {
+	World world;
 	StaticObject wall(20, 10);
 	BreakableObject table(20, 20, 20);
 	Mob* mob = new Mob(5, 15, Vector2(2, 0), 30);
@@ -25,7 +27,9 @@ int main()
 
 	p->Move();
 
+	world.Step();
 
+	std::cout << "\n\nFINITO PIPO" << std::endl;
 	return 0;
 }
 

@@ -3,7 +3,7 @@
 World::World()
 {
 	StaticObject* wall = new StaticObject(20, 10);
-	BreakableObject* table = new BreakableObject(20, 20, 20);
+	BreakableObject* table = new BreakableObject(20, 20, 20, 1);
 	Mob* mob = new Mob(5, 15, Vector2(2, 0), 20);
 	Player* player = new Player(35, 15, Vector2(-2, 0), 10);
 
@@ -16,26 +16,23 @@ World::World()
 
 void World::Step()
 {
-	for (Entity* entity : listeEntity)
+	for (Entity* entity : listeEntity) // Parcours la liste tant que la boucle rencontre des Entity dans la liste
 	{
-		Mob* mob;
-		Player* player;
-		BreakableObject* breakableObject;
 
-		if (mob = dynamic_cast<Mob*>(entity))
+		if (Mob* mob = dynamic_cast<Mob*>(entity)) // Vérification de "est-ce que l'objet contenu dans cette case de la liste est un mob")
 		{
-			mob->Move(Vector2(mob->GetX() - breakableObject->GetX(), mob->GetY() - breakableObject->GetY()))
-
+			mob->AfficherPosition();
+			mob->Move(Vector2(listeEntity[1]->GetX(), listeEntity[1]->GetY()));
+			mob->AfficherPosition();
 			
-			
-
 		}
-		if (player = dynamic_cast<Player*>(entity))
+		if (Player* player = dynamic_cast<Player*>(entity))
 		{
+			if (listeEntity[2])
+			{
 
-		}
-		if (breakableObject = dynamic_cast<BreakableObject*>(entity))
-		{
+			}
+
 
 		}
 

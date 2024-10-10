@@ -19,9 +19,13 @@ public:
 
 	void TakeDamage(float _degats) override;
 
+	void AfficherPosition();
+
 	void Move(Vector2 _dir, float _vitesse) override;
 	void Move(Vector2 _dir) override;
 	void Move() override;
+
+	bool IsAlive();
 };
 
 #endif

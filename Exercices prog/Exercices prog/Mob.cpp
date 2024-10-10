@@ -19,6 +19,11 @@ Mob::Mob(float _x, float _y, Vector2 _dir, float _vieMax) : Entity(_x, _y), AMov
 	std::cout << "Mob just created at : x = " << _x << " ; y = " << _y << std::endl;
 }
 
+void Mob::AfficherPosition()
+{
+	std::cout << "Mob is at : x = " << Entity::GetX() << " ; y = " << Entity::GetY() << std::endl;
+}
+
 void Mob::TakeDamage(float _degats)
 {
 	Alive::TakeDamage(_degats);
@@ -37,9 +42,23 @@ void Mob::Move(Vector2 _dir, float _vitesse)
 }
 void Mob::Move(Vector2 _dir)
 {
+	Entity::SetX(_dir.GetX());
+
+	Entity::SetY(_dir.GetY());
+
 	std::cout << "Mob just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetX() << std::endl;
 }
 void Mob::Move()
 {
 	std::cout << "Mob just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetX() << std::endl;
+}
+
+
+bool Mob::IsAlive()
+{
+	if (Alive::GetLife() > 0)
+	{
+		return true;
+	}
+	else return false;
 }

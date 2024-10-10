@@ -1,6 +1,6 @@
 #include "Alive.h"
 
-Alive::Alive()
+Alive::Alive() : vie_max(100), vie(0)
 {
 
 }
