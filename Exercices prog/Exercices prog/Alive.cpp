@@ -9,6 +9,15 @@ Alive::Alive(float _vieMax, float _vie) : vie_max(_vieMax), vie(_vie)
 
 }
 
+bool Alive::IsAlive()
+{
+	if (vie > 0)
+	{
+		return true;
+	}
+	else return false;
+}
+
 float Alive::GetMaxLife()
 {
 	return vie_max;

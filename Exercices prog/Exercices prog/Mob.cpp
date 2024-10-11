@@ -14,7 +14,7 @@ Mob::Mob(float _x, float _y, Vector2 _dir, float _vitesse, float _vieMax) : Enti
 	std::cout << "Mob just created at : x = " << _x << " ; y = " << _y << std::endl;
 }
 
-Mob::Mob(float _x, float _y, Vector2 _dir, float _vieMax) : Entity(_x, _y), AMovable(_dir, 10), Alive(_vieMax, _vieMax)
+Mob::Mob(float _x, float _y, Vector2 _dir, float _vieMax) : Entity(_x, _y), AMovable(_dir, 1), Alive(_vieMax, _vieMax)
 {
 	std::cout << "Mob just created at : x = " << _x << " ; y = " << _y << std::endl;
 }
@@ -38,13 +38,54 @@ void Mob::TakeDamage(float _degats)
 
 void Mob::Move(Vector2 _dir, float _vitesse)
 {
+	if (_dir.GetX() < Entity::GetX())
+	{
+		dir.SetX(-1);
+		Entity::SetX(Entity::GetX() + (dir.GetX() * _vitesse));
+
+	}
+	if (_dir.GetX() > Entity::GetX())
+	{
+		dir.SetX(1);
+		Entity::SetX(Entity::GetX() + (dir.GetX() * _vitesse));
+	}
+
+	if (_dir.GetX() < Entity::GetX())
+	{
+		dir.SetX(-1);
+		Entity::SetY(Entity::GetY() + (dir.GetY() * _vitesse));
+	}
+	if (_dir.GetX() > Entity::GetX())
+	{
+		dir.SetX(1);
+		Entity::SetY(Entity::GetY() + (dir.GetY() * _vitesse));
+	}
 	std::cout << "Mob just moved at : x = " << _dir.GetX() << " ; y = " <<_dir.GetY() << std::endl;
 }
 void Mob::Move(Vector2 _dir)
 {
-	Entity::SetX(_dir.GetX());
+	if (_dir.GetX() < Entity::GetX())
+	{
+		dir.SetX(-1);
+		Entity::SetX(Entity::GetX() + (dir.GetX() * vitesse));
 
-	Entity::SetY(_dir.GetY());
+	}
+	if (_dir.GetX() > Entity::GetX())
+	{
+		dir.SetX(1);
+		Entity::SetX(Entity::GetX() + (dir.GetX() * vitesse));
+	}
+
+	if (_dir.GetX() < Entity::GetX())
+	{
+		dir.SetX(-1);
+		Entity::SetY(Entity::GetY() + (dir.GetY() * vitesse));
+	}
+	if (_dir.GetX() > Entity::GetX())
+	{
+		dir.SetX(1);
+		Entity::SetY(Entity::GetY() + (dir.GetY() * vitesse));
+	}
 
 	std::cout << "Mob just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetX() << std::endl;
 }
@@ -54,11 +95,3 @@ void Mob::Move()
 }
 
 
-bool Mob::IsAlive()
-{
-	if (Alive::GetLife() > 0)
-	{
-		return true;
-	}
-	else return false;
-}

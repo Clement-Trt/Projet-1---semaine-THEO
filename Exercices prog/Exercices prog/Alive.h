@@ -15,6 +15,8 @@ public:
 	Alive();
 	Alive(float _vieMax, float _vie);
 
+
+	virtual bool IsAlive();
 	virtual float GetMaxLife();
 	virtual float GetLife();
 	virtual void TakeDamage(float _degats);

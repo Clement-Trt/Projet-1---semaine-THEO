@@ -22,6 +22,8 @@ public:
 
 	void Step();
 
+	bool KillableStillAlive();
+
 };
 
 #endif

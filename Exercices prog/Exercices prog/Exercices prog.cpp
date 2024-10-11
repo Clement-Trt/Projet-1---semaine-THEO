@@ -12,6 +12,7 @@
 int main()
 {
 	World world;
+	/*
 	StaticObject wall(20, 10);
 	BreakableObject table(20, 20, 20);
 	Mob* mob = new Mob(5, 15, Vector2(2, 0), 30);
@@ -25,9 +26,15 @@ int main()
 
 	table.TakeDamage(15);
 
-	p->Move();
+	p->Move();*/
 
-	world.Step();
+
+	while (world.KillableStillAlive())
+	{
+		world.Step();
+	}
+
+	std::cout << "\n\nSimulation terminee\n\n";
 
 	std::cout << "\n\nFINITO PIPO" << std::endl;
 	return 0;

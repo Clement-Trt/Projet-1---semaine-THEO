@@ -13,7 +13,7 @@ Player::Player(float _x, float _y, Vector2 _dir, float _vitesse, float _vieMax) 
 {
 	std::cout << "Player just created at : x = " << _x << " ; y = " << _y << std::endl;
 }
-Player::Player(float _x, float _y, Vector2 _dir, float _vieMax) : Entity(_x, _y), AMovable(_dir, 10), Alive(_vieMax, _vieMax)
+Player::Player(float _x, float _y, Vector2 _dir, float _vieMax) : Entity(_x, _y), AMovable(_dir, 1), Alive(_vieMax, _vieMax)
 {
 	std::cout << "Player just created at : x = " << _x << " ; y = " << _y << std::endl;
 }
@@ -33,18 +33,56 @@ void Player::TakeDamage(float _degats)
 
 void Player::Move(Vector2 _dir, float _vitesse)
 {
-	Entity::SetX(Entity::GetX() + _dir.GetX() * _vitesse) ;
+	if (_dir.GetX() < Entity::GetX())
+	{
+		dir.SetX(-1);
+		Entity::SetX(Entity::GetX() + (dir.GetX() * vitesse));
 
-	Entity::SetY(Entity::GetY() + _dir.GetY() * _vitesse);
+	}
+	if (_dir.GetX() > Entity::GetX())
+	{
+		dir.SetX(1);
+		Entity::SetX(Entity::GetX() + (dir.GetX() * vitesse));
+	}
 
-	std::cout << "Player just moved at : x = " << _dir.GetX() << " ; y = " << _dir.GetY() << std::endl;
+	if (_dir.GetX() < Entity::GetX())
+	{
+		dir.SetX(-1);
+		Entity::SetY(Entity::GetY() + (dir.GetY() * vitesse));
+	}
+	if (_dir.GetX() > Entity::GetX())
+	{
+		dir.SetX(1);
+		Entity::SetY(Entity::GetY() + (dir.GetY() * vitesse));
+	}
+
+	std::cout << "Player just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetX() << std::endl;
 }
 
 void Player::Move(Vector2 _dir)
 {
-	Entity::SetX(Entity::GetX() + (_dir.GetX() * vitesse));
+	if (_dir.GetX() < Entity::GetX())
+	{
+		dir.SetX(-1);
+		Entity::SetX(Entity::GetX() + (dir.GetX() * vitesse));
 
-	Entity::SetY(Entity::GetY() + (_dir.GetY() * vitesse));
+	}
+	if (_dir.GetX() > Entity::GetX())
+	{
+		dir.SetX(1);
+		Entity::SetX(Entity::GetX() + (dir.GetX() * vitesse));
+	}
+
+	if (_dir.GetX() < Entity::GetX())
+	{
+		dir.SetX(-1);
+		Entity::SetY(Entity::GetY() + (dir.GetY() * vitesse));
+	}
+	if (_dir.GetX() > Entity::GetX())
+	{
+		dir.SetX(1);
+		Entity::SetY(Entity::GetY() + (dir.GetY() * vitesse));
+	}
 
 	std::cout << "Player just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetX() << std::endl;
 }
