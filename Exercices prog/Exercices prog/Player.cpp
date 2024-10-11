@@ -97,7 +97,6 @@ void Player::Move()
 
 void Player::AttackAlive(Alive* _alive)
 {
-	_alive->TakeDamage(10);
-
 	std::cout << "Player just attacked" << std::endl;
+	_alive->TakeDamage(10);
 }

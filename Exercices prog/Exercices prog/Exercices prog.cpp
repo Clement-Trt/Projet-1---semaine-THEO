@@ -35,8 +35,6 @@ int main()
 	}
 
 	std::cout << "\n\nSimulation terminee\n\n";
-
-	std::cout << "\n\nFINITO PIPO" << std::endl;
 	return 0;
 }
 
