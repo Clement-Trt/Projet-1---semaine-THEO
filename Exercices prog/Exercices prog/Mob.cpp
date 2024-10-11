@@ -50,17 +50,17 @@ void Mob::Move(Vector2 _dir, float _vitesse)
 		Entity::SetX(Entity::GetX() + (dir.GetX() * _vitesse));
 	}
 
-	if (_dir.GetX() < Entity::GetX())
+	if (_dir.GetY() < Entity::GetY())
 	{
-		dir.SetX(-1);
+		dir.SetY(-1);
 		Entity::SetY(Entity::GetY() + (dir.GetY() * _vitesse));
 	}
-	if (_dir.GetX() > Entity::GetX())
+	if (_dir.GetY() > Entity::GetY())
 	{
-		dir.SetX(1);
+		dir.SetY(1);
 		Entity::SetY(Entity::GetY() + (dir.GetY() * _vitesse));
 	}
-	std::cout << "Mob just moved at : x = " << _dir.GetX() << " ; y = " <<_dir.GetY() << std::endl;
+	std::cout << "Mob just moved at : x = " << dir.GetX() << " ; y = " <<dir.GetY() << std::endl;
 }
 void Mob::Move(Vector2 _dir)
 {
@@ -76,22 +76,22 @@ void Mob::Move(Vector2 _dir)
 		Entity::SetX(Entity::GetX() + (dir.GetX() * vitesse));
 	}
 
-	if (_dir.GetX() < Entity::GetX())
+	if (_dir.GetY() < Entity::GetY())
 	{
-		dir.SetX(-1);
+		dir.SetY(-1);
 		Entity::SetY(Entity::GetY() + (dir.GetY() * vitesse));
 	}
-	if (_dir.GetX() > Entity::GetX())
+	if (_dir.GetY() > Entity::GetY())
 	{
-		dir.SetX(1);
+		dir.SetY(1);
 		Entity::SetY(Entity::GetY() + (dir.GetY() * vitesse));
 	}
 
-	std::cout << "Mob just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetX() << std::endl;
+	std::cout << "Mob just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetY() << std::endl;
 }
 void Mob::Move()
 {
-	std::cout << "Mob just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetX() << std::endl;
+	std::cout << "Mob just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetY() << std::endl;
 }
 
 

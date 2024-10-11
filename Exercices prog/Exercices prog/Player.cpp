@@ -45,18 +45,18 @@ void Player::Move(Vector2 _dir, float _vitesse)
 		Entity::SetX(Entity::GetX() + (dir.GetX() * vitesse));
 	}
 
-	if (_dir.GetX() < Entity::GetX())
+	if (_dir.GetY() < Entity::GetY())
 	{
-		dir.SetX(-1);
+		dir.SetY(-1);
 		Entity::SetY(Entity::GetY() + (dir.GetY() * vitesse));
 	}
-	if (_dir.GetX() > Entity::GetX())
+	if (_dir.GetY() > Entity::GetY())
 	{
-		dir.SetX(1);
+		dir.SetY(1);
 		Entity::SetY(Entity::GetY() + (dir.GetY() * vitesse));
 	}
 
-	std::cout << "Player just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetX() << std::endl;
+	std::cout << "Player just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetY() << std::endl;
 }
 
 void Player::Move(Vector2 _dir)
@@ -73,18 +73,18 @@ void Player::Move(Vector2 _dir)
 		Entity::SetX(Entity::GetX() + (dir.GetX() * vitesse));
 	}
 
-	if (_dir.GetX() < Entity::GetX())
+	if (_dir.GetY() < Entity::GetY())
 	{
-		dir.SetX(-1);
+		dir.SetY(-1);
 		Entity::SetY(Entity::GetY() + (dir.GetY() * vitesse));
 	}
-	if (_dir.GetX() > Entity::GetX())
+	if (_dir.GetY() > Entity::GetY())
 	{
-		dir.SetX(1);
+		dir.SetY(1);
 		Entity::SetY(Entity::GetY() + (dir.GetY() * vitesse));
 	}
 
-	std::cout << "Player just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetX() << std::endl;
+	std::cout << "Player just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetY() << std::endl;
 }
 void Player::Move()
 {
@@ -92,7 +92,7 @@ void Player::Move()
 
 	Entity::SetY(Entity::GetY() + dir.GetY() * vitesse);
 
-	std::cout << "Player just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetX() << std::endl;
+	std::cout << "Player just moved at : x = " << Entity::GetX() << " ; y = " << Entity::GetY() << std::endl;
 }
 
 void Player::AttackAlive(Alive* _alive)
